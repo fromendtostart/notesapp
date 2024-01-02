@@ -9,7 +9,7 @@ export default function NotesList(){
     console.log(notes);
     
     return(
-        <div className="noteslist w-full px-24 flex flex-col gap-2">
+        <div className="noteslist w-xl px-4 flex flex-col gap-2">
             {notes.map((note)=>{
                 console.log(note);
                 return(
