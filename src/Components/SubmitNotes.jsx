@@ -18,7 +18,7 @@ export default function SubmitNotes(){
     }
 
     return(
-        <div className="submitnotes max-w-lg flex items-center justify-center">
+        <div className="submitnotes max-w-lg m-6 flex items-center justify-center">
             <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center">
                 <label htmlFor="note-title">Title</label>
                 <input
