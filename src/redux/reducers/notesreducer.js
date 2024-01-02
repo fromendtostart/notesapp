@@ -23,6 +23,14 @@ export const notesReducer = (state = initialState , action) => {
                     if(note.id!=action.payload) return note;
                 })
             }
+        case ActionTypes.EDIT_NOTE:
+            return{
+                ...state,
+                notes : state.notes.map((note)=>{
+                    if(note.id!=action.payload.id) return note;
+                    else return action.payload;
+                })
+            }
         default: 
             return state;
     }

@@ -13,3 +13,10 @@ export const removeNote = (id) => {
         payload: id,
     };
 };
+
+export const editNote = (note) => {
+    return {
+        type: ActionTypes.EDIT_NOTE,
+        payload: note,
+    };
+};
