@@ -1,7 +1,5 @@
 import { ActionTypes } from "../constants/actiontypes"
 
-let id = 0;
-
 const initialState = {
     notes:[{
         id: 0,
@@ -13,11 +11,18 @@ const initialState = {
 
 export const notesReducer = (state = initialState , action) => {
     switch(action.type){
-        case ActionTypes.SET_NOTES:
+        case ActionTypes.ADD_NOTE:
             return {
                 ...state, 
-                notes : [...state.notes, {id : id++, ...action.payload}]
+                notes : [...state.notes, {id : state.notes.length, ...action.payload}]
             };
+        case ActionTypes.REMOVE_NOTE:
+            return{
+                ...state,
+                notes : state.notes.filter((note)=>{
+                    if(note.id!=action.payload) return note;
+                })
+            }
         default: 
             return state;
     }

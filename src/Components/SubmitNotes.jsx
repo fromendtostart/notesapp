@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { setNotes } from "../redux/actions/notesactions";
+import { addNote } from "../redux/actions/notesactions";
 import { useDispatch } from "react-redux";
 
 export default function SubmitNotes(){
@@ -14,20 +14,22 @@ export default function SubmitNotes(){
             title,
             description,
         }
-        dispatch(setNotes(note));
+        dispatch(addNote(note));
     }
 
     return(
-        <div className="submitnotes">
-            <form onSubmit={handleSubmit}>
+        <div className="submitnotes max-w-lg flex items-center justify-center">
+            <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center">
                 <label htmlFor="note-title">Title</label>
                 <input
+                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
                 type = "text"
                 id = "note-title" 
                 value = {title}
                 onChange={(e) => setTitle(e.target?.value)} />
                 <label htmlFor="note-desc">Description</label>
                 <input
+                className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
                 type = "text"
                 id = "note-desc" 
                 value = {description}

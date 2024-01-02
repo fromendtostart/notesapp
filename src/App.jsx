@@ -1,12 +1,10 @@
-import './App.css'
 import NotesList from './Components/NotesList'
 import SubmitNotes from './Components/SubmitNotes'
 
 function App() {
 
   return (
-    <div className="app">
-      Hey!
+    <div className="app flex flex-col justify-center items-center">
       <SubmitNotes />
       <NotesList />
     </div>

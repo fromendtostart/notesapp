@@ -1,15 +1,15 @@
 import { ActionTypes } from "../constants/actiontypes"
 
-export const setNotes = (notes) => {
+export const addNote = (note) => {
     return {
-        type: ActionTypes.SET_NOTES,
-        payload: notes,
+        type: ActionTypes.ADD_NOTE,
+        payload: note,
     };
 };
 
-export const selectedNotes = (notes) => {
+export const removeNote = (id) => {
     return {
-        type: ActionTypes.SELECTED_NOTES,
-        payload: notes,
+        type: ActionTypes.REMOVE_NOTE,
+        payload: id,
     };
 };
