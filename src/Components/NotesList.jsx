@@ -6,7 +6,6 @@ import NotesListItem from "./NotesListItem";
 export default function NotesList(){
     
     const notes = useSelector((state) => state.allNotes.notes);
-    console.log(notes);
     
     return(
         <div className="noteslist w-xl px-4 flex flex-col gap-2">

@@ -20,3 +20,17 @@ export const editNote = (note) => {
         payload: note,
     };
 };
+
+export const showPopup = (note) => {
+    return {
+        type: ActionTypes.SHOW_POPUP,
+        payload: note,
+    };
+};
+
+export const closePopup = (note) => {
+    return {
+        type: ActionTypes.CLOSE_POPUP,
+        payload: note,
+    };
+};

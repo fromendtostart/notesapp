@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useDispatch } from "react-redux"
-import { editNote, removeNote } from "../redux/actions/notesactions";
+import { editNote, removeNote, showPopup } from "../redux/actions/notesactions";
 
 export default function NotesListItem(props){
 
@@ -27,7 +27,7 @@ export default function NotesListItem(props){
 
 
     const showMore = () => {
-
+        dispatch(showPopup(props.note));
     }
 
     return(

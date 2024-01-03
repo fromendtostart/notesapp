@@ -5,7 +5,9 @@ const initialState = {
         id: 0,
         title: "Important Note",
         description: "Do consider hiring me!",
-    }]
+    }],
+    isPopup: false,
+    popup:{}
 }
 
 
@@ -31,6 +33,17 @@ export const notesReducer = (state = initialState , action) => {
                     else return action.payload;
                 })
             }
+            case ActionTypes.SHOW_POPUP:
+                return{
+                    ...state,
+                    isPopup: true,
+                    popup:action.payload
+                }
+                case ActionTypes.CLOSE_POPUP:
+                    return{
+                        ...state,
+                        isPopup: false
+                    }
         default: 
             return state;
     }
